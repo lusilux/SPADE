@@ -3,7 +3,7 @@ from spade.agent import Agent
 from spade.behaviour import PeriodicBehaviour
 import docker_utils
 
-# Configuración global de logging para toda la app
+#logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(name)s | %(levelname)s | %(message)s"
@@ -23,12 +23,12 @@ class MonitorBehaviour(PeriodicBehaviour):
 
 class MonitorAgent(Agent):
     async def setup(self):
-        # logger vinculado al agente
+        #logger agente
         self.logger = logging.getLogger(str(self.jid))
         self.logger.setLevel(logging.INFO)
 
         self.logger.info("MonitorAgent starting...")
 
-        # cada 5 segundos
+        #cada 5 segundos
         b = MonitorBehaviour(period=5)
         self.add_behaviour(b)
