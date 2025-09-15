@@ -2,7 +2,6 @@ import asyncio
 from monitor_agent import MonitorAgent
 
 async def main():
-    # sustituye con tu usuario/contraseña XMPP configurado en Prosody u otro servidor
     jid = "monitor2@localhost"
     passwd = "password"
 
